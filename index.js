@@ -18,7 +18,7 @@ app.get("/unprotected", (req, res) => {
 });
 
 app.get("/protected", authCheck, (req, res) => {
-  res.send("This is a protected resource, you must be logged in to read this.");
+  res.json({ message: "This is a protected resource." }); 
 });
 
 app.listen(port, () => {
